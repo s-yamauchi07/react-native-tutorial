@@ -5,7 +5,10 @@ import { StatusBar } from "expo-status-bar";
 const App: FC = () => {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text style={{ color: "#fff" }}>Hello world</Text>
+      <Text style={styles.text}>
+        Open up App.tsx to start working on your app!
+      </Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -17,6 +20,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#25292e",
     alignItems: "center",
     justifyContent: "center",
+  },
+  text: {
+    color: "#fff",
   },
 });
 
