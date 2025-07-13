@@ -14,7 +14,7 @@ const App: FC = () => {
         <ImageViewer placeholderImageSource={placeholderImage} />
       </View>
       <View style={styles.footerContainer}>
-        <Button label="写真を選択" />
+        <Button label="写真を選択" theme="primary" />
         <Button label="この写真を使用" />
       </View>
       <StatusBar style="auto" />

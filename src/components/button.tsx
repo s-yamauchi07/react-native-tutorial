@@ -1,14 +1,45 @@
 import { type FC } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 type ButtonProps = {
   label: string;
+  theme?: "primary" | undefined;
 };
 
 export const Button: FC<ButtonProps> = (props) => {
+  if (props.theme === "primary") {
+    return (
+      <View
+        style={[
+          styles.buttonContainer,
+          { borderWidth: 4, borderColor: "#ffd33d", borderRadius: 10 },
+        ]}
+      >
+        <Pressable
+          style={[styles.button, { backgroundColor: "#fff" }]}
+          onPress={() => alert("button pressed")}
+        >
+          <FontAwesome
+            name="picture-o"
+            size={18}
+            color="#25292e"
+            style={styles.buttonIcon}
+          />
+          <Text style={[styles.buttonLabel, { color: "#25292e" }]}>
+            {props.label}
+          </Text>
+        </Pressable>
+      </View>
+    );
+  }
+
   return (
     <View style={styles.buttonContainer}>
-      <Pressable style={styles.button} onPress={() => alert("button pressed")}>
+      <Pressable
+        style={styles.button}
+        onPress={() => alert("ボタンが押されました")}
+      >
         <Text style={styles.buttonLabel}>{props.label}</Text>
       </Pressable>
     </View>
