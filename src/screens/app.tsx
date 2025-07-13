@@ -1,14 +1,15 @@
-import { FC } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { type FC } from "react";
+import { StyleSheet, View, type ImageSourcePropType } from "react-native";
 import { StatusBar } from "expo-status-bar";
+
+import { ImageViewer } from "../components/image-viewer";
+
+const placeholderImage: ImageSourcePropType = require("../assets/images/background-image.png");
 
 const App: FC = () => {
   return (
     <View style={styles.container}>
-      <Text style={{ color: "#fff" }}>Hello world</Text>
-      <Text style={styles.text}>
-        Open up App.tsx to start working on your app!
-      </Text>
+      <ImageViewer placeholderImageSource={placeholderImage} />
       <StatusBar style="auto" />
     </View>
   );
@@ -19,10 +20,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#25292e",
     alignItems: "center",
-    justifyContent: "center",
   },
-  text: {
-    color: "#fff",
+  imageContainer: {
+    flex: 1,
+    paddingTop: 58,
   },
 });
 
